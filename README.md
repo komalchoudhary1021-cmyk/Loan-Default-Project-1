@@ -10,53 +10,48 @@ This dashboard helps financial institutions analyze loan distribution, customer 
 
 ---
 
-## Steps followed
+## Steps Followed
 
-- Step 1: Loaded dataset into Power BI Desktop (CSV file)
+- **Step 1: Data Setup using Dataflow**
+  - Created Dataflow in Power BI Fabric environment
+  - Used SQL interface to manually input and structure data as tables
+  - Stored and managed data within Dataflow for centralized access
 
-- Step 2: Opened Power Query Editor and enabled:
-  - Column distribution  
-  - Column quality  
-  - Column profile  
+- **Step 2: Environment & Connectivity Setup**
+  - Installed On-Premises Data Gateway for secure data transfer
+  - Set up SQL Server Management Studio (SSMS) and SQL Workbench 2022
+  - Established connection between Dataflow and Power BI
 
-- Step 3: Applied data cleaning and handled missing values
+- **Step 3: Data Loading in Power BI**
+  - Imported data from Dataflow into Power BI Desktop
+  - Verified successful connection and data availability
 
-- Step 4: Created calculated column for age grouping
+- **Step 4: Data Cleaning & Profiling**
+  - Performed column profiling (data types, distributions, null values)
+  - Cleaned and transformed data using Power Query
+  - Ensured data accuracy and consistency
 
+- **Step 5: Data Modeling & DAX**
+  - Created calculated columns and measures using DAX
+  - Applied business logic for KPIs and metrics
+  - Structured model for efficient reporting
 
-Age Group =
-IF([Age] <= 25, "0-25",
-IF([Age] <= 50, "25-50",
-IF([Age] <= 75, "50-75",
-"75+")))
+- **Step 6: Data Visualization**
+  - Designed interactive dashboards in Power BI
+  - Created visuals such as:
+    - KPI Cards
+    - Bar Charts and Line Charts
+    - Filters and Slicers for interactivity
 
+- **Step 7: Dashboard Design**
+  - Applied clean layout and visual theme
+  - Focused on readability and business insights
+  - Organized visuals for storytelling
 
-- Step 5: Created measures for analysis
-
-
-Total Loan Amount = SUM([Loan Amount])
-
-Average Loan = AVERAGE([Loan Amount])
-
-Default Rate % =
-DIVIDE(SUM([Default Cases]), COUNT([Loan ID])) * 100
-
-
-- Step 6: Built visuals:
-  - Loan amount by purpose  
-  - Income by employment  
-  - Default rate by employment  
-  - Loan amount by age group  
-  - Default trend by year  
-
-- Step 7: Created multiple report pages:
-  - Loan Default & Overview  
-  - Applicant Demographics  
-  - Financial Risk Metrics  
-
-- Step 8: Added slicers for interactivity
-
-- Step 9: Published report to Power BI Service
+- **Step 8: Deployment & Sharing**
+  - Published report to Power BI Service
+  - Created workspace for project
+  - Configured scheduled refresh for automatic updates
 
 ---
 
